@@ -3,7 +3,7 @@ title: "【Unity】VRシーンをスクリプトからキャプチャして透�
 emoji: "🎈"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Unity", "VR"]
-published: false
+published: true
 ---
 
 VRシーンをスクリプトからキャプチャして，画像上でオブジェクトの位置を取得しようとしたときに，至る所でハマったので要点をまとめました．キャプチャする方法だけ知りたい人は前半部分だけ読んでください．
