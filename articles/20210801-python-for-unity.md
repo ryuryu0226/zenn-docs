@@ -6,7 +6,9 @@ topics: ["Unity", "python", "csharp"]
 published: false
 ---
 
-[概要]UnityでPythonモジュールを使いたい。
+[概要]
+UnityでPythonモジュールを使いたい理由
 
-# Pythonnet
+# Pythonnetとは？
 [Pythonnetの説明]
+

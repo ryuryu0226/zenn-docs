@@ -49,7 +49,7 @@ private IEnumerator VR_Capture(Texture2D tex, Camera camera)
     tex.Apply();
 
     byte[] bytes = tex.EncodeToJPG(75);
-    File.WriteAllBytes(@"capture\"+ frame +".jpg", bytes);
+    File.WriteAllBytes(@"capture\" + frame + ".jpg", bytes);
 
     yield break;
 }
