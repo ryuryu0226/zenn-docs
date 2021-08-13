@@ -33,7 +33,7 @@ private IEnumerator Depth_Capture(Texture2D tex, Camera camera)
     tex.Apply();
 
     byte[] bytes = tex.EncodeToPNG();
-    File.WriteAllBytes(@"capture\fixation" + frame + ".png", bytes);
+    File.WriteAllBytes(@"capture\" + frame + ".png", bytes);
 
     yield break;
 }
