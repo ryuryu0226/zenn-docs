@@ -26,7 +26,7 @@ private IEnumerator Depth_Capture(Texture2D tex, Camera camera)
     yield return new WaitForEndOfFrame();
 
     // RenderTexture.active = camera.targetTexture; // これは無理
-    RenderTexture.active = new RenderTexture(tex.width, tex.height, 0);
+    RenderTexture.active = new RenderTexture(tex.width, tex.height, 16);
     Graphics.Blit(camera.targetTexture, RenderTexture.active);
 
     tex.ReadPixels(new Rect(0, 0, camera.targetTexture.width, camera.targetTexture.height), 0, 0);
