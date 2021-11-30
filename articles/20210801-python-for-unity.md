@@ -1,5 +1,5 @@
 ---
-title: "UnityでPythonを使う"
+title: "UnityでPythonモジュールを使用する【Pythonnet】"
 emoji: "📘"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Unity", "python", "csharp"]
