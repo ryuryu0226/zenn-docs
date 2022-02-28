@@ -6,6 +6,7 @@ topics: ["Unity", "VR"]
 published: true
 ---
 
+# はじめに
 VRシーンをスクリプトからキャプチャして，画像上でオブジェクトの位置を取得しようとしたときに，至る所でハマったので要点をまとめました．キャプチャする方法だけ知りたい人は前半部分だけ読んでください．
 
 下の実装例では，ユーザが見ているVRシーンをキャプチャしています．球の中心座標を透視投影変換し，キャプチャ画像上に赤い点でプロットしています．
@@ -17,7 +18,7 @@ VRシーンをスクリプトからキャプチャして，画像上でオブジ
 キャプチャ用のカメラをシーンに配置すると，勝手にVRカメラとして認識され，カメラの姿勢やFoVがVRデバイスによって制御されてしまいます．そのため，VRデバイスからの制御を切る必要があります．
 
 ```cs
-XRDevice.DisableAutoXRCameraTracking(target, false);
+XRDevice.DisableAutoXRCameraTracking(Camera, true);
 ```
 
 上記で制御を切れますが，シーンを再生する一瞬だけ制御が働き，カメラの姿勢やFoVが更新されてしまいます．VRデバイスからの制御を切った後，姿勢とFoVを再設定しなければなりません．
@@ -25,11 +26,13 @@ XRDevice.DisableAutoXRCameraTracking(target, false);
 また，VRシーンをテクスチャにレンダリングするために，カメラに`RenderTexture`を割り当てても，VRデバイスからの制御を切ることができます．
 
 ```cs
-CaptureCamera.targetTexture = new RenderTexture(width, height, 0);
-CaptureCamera.transform.localPosition = Vector3.zero;
-CaptureCamera.transform.localRotation = Quaternion.identity;
-CaptureCamera.fieldOfView = fov;
+Camera.targetTexture = new RenderTexture(width, height, 0);
+Camera.transform.localPosition = Vector3.zero;
+Camera.transform.localRotation = Quaternion.identity;
+Camera.fieldOfView = fov;
 ```
+
+(補足：Camera > Target Eye > None (Main Display) でも同様に制御を切ることができます)
 
 # VRシーンをキャプチャする
 フレーム毎に，`RenderTexture`に格納されているピクセル情報を`Texture2D`に変換し，画像にエンコードして保存します．画像の保存はシーンのレンダリングが完了するまで待つ必要があります．下記にキャプチャ用のソースコードを載せています．
