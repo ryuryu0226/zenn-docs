@@ -40,7 +40,7 @@ $$
 
 複数直線の近傍点は，以下の式で表される．
 
-$$ \bm c = \mathrm{argmin} \sum_i d_i^2$$
+$$ \bm c = \mathop{\rm arg~min}\limits_{\bm c} \sum_i d_i^2$$
 
 上式を$\bm c$の成分ごとに偏微分して解けば，近傍点が求まる．
 
