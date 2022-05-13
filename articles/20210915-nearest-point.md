@@ -40,9 +40,9 @@ $$
 
 複数直線の近傍点は，以下の式で表される．
 
-$$ \bm c = \mathop{\rm arg~min}\limits_{\bm c} \sum_i d_i^2$$
+$$ \bm c = \mathop{\rm arg~min} \sum_i d_i^2$$
 
-上式を$\bm c$の成分ごとに偏微分して解けば，近傍点が求まる．
+$\sum_i d_i^2$を$\bm c$の成分ごとに偏微分して解けば，近傍点が求まる．
 
 # 参考文献
 [Point cloud to point cloud rigid transformations](https://www.cs.jhu.edu/cista/455/Lectures/Rigid3D3DCalculations.pdf)

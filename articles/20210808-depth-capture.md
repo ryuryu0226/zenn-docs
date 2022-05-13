@@ -39,7 +39,7 @@ private IEnumerator Depth_Capture(Texture2D tex, Camera camera)
     yield break;
 }
 ```
-このコルーチンの使い方は，スクリプトからシーンをキャプチャする方法と同様です．詳しくは[以前のブログ](https://zenn.dev/ryuryu/articles/20210730-vr-capture)に書いてます．
+このコルーチンの使い方は，[以前のブログ](https://zenn.dev/ryuryu/articles/20210730-vr-capture)に詳しく書いてます．
 
 # （おまけ）Shaderでポストエフェクト
 
